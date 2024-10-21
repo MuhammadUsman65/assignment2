@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast Tables</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans h-screen bg-gray-900 text-gray-200 flex flex-col">
+    <div class="container flex h-full overflow-hidden">
+        <!-- Sidebar Menu -->
+        <aside class="menu flex-none w-1/5 bg-gray-800 p-5">
+            <h2 class="text-2xl font-semibold text-indigo-400 mb-6">Weather App</h2>
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="text-indigo-300 hover:text-white transition">Dashboard</a></li>
+                    <li><a href="tables.html" class="text-indigo-300 hover:text-white transition">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="main flex-grow p-6 bg-gray-850 overflow-y-auto">
+            <header class="flex justify-between items-center mb-8">
+                <input id="cityInput2" type="text" placeholder="Enter city name"
+                    class="p-3 w-3/5 border-2 border-gray-600 rounded bg-gray-700 text-gray-300 placeholder-gray-500">
+                <div class="flex space-x-4 mt-2">
+                    <button id="getWeatherforTables"
+                        class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Get
+                        Weather</button>
+                </div>
+                <!-- User Profile Section -->
+                <div class="relative mt-2">
+                    <button
+                        class="flex items-center space-x-2 bg-gray-700 p-2 rounded-full hover:bg-gray-600 transition">
+                        <img src="./p1.jpg" alt="Profile" class="w-8 h-8 rounded-full">
+                    </button>
+                </div>
+            </header>
+
+            <!-- Temperature Forecast Table -->
+            <div class="table-container bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-4">Temperature Forecast Table</h3>
+                <table id="forecastTable" class="w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="p-3 bg-gray-700 text-left border border-gray-600">Date</th>
+                            <th class="p-3 bg-gray-700 text-left border border-gray-600">Temperature</th>
+                            <th class="p-3 bg-gray-700 text-left border border-gray-600">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-gray-700 text-gray-300">
+                        <!-- Table data dynamically inserted -->
+                    </tbody>
+                </table>
+                <div class="pagination flex justify-end mt-4">
+                    <button id="prevPage" class="bg-indigo-600 text-white py-2 px-4 rounded mr-2 disabled:bg-gray-600"
+                        disabled>Previous</button>
+                    <button id="nextPage" class="bg-indigo-600 text-white py-2 px-4 rounded">Next</button>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filters flex space-x-4 mt-8">
+                <button class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Sort
+                    Ascending</button>
+                <button class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Sort
+                    Descending</button>
+                <button class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Filter Rainy
+                    Days</button>
+                <button class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Show Highest
+                    Temperature</button>
+            </div>
+
+            <!-- Chatbot Section -->
+            <div class="chatbot-section bg-gray-800 p-6 mt-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-4">Chat Bar for Chatbot</h3>
+                <input id="chatbotInput" type="text" placeholder="Ask me anything..."
+                    class="chatbar w-full p-3 mb-4 bg-gray-700 border-2 border-gray-600 rounded text-gray-300 placeholder-gray-500">
+                <button id="askChatbot"
+                    class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Ask
+                    Chatbot</button>
+                <div id="chatbotResponse" class="chatbot-response mt-4 p-4 bg-gray-700 text-gray-300 rounded"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="test2.js"></script>
+</body>
+
+</html>

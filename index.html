@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans h-screen bg-gray-900 text-gray-200 flex flex-col">
+
+    <div class="flex flex-grow w-full overflow-hidden">
+        <!-- Sidebar Menu -->
+        <aside class="flex-none w-1/5 bg-gray-800 text-white p-5">
+            <h2 class="text-2xl mb-5 font-semibold text-indigo-400">Weather App</h2>
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="text-indigo-300 hover:text-white transition">Dashboard</a></li>
+                    <li><a href="tables.html" class="text-indigo-300 hover:text-white transition">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Section -->
+        <section class="flex-grow p-5 overflow-y-auto bg-gray-850">
+            <header class="flex flex-wrap justify-between items-center mb-8">
+                <input type="text" id="cityInput"
+                    class="p-3 w-3/5 border-2 border-gray-600 rounded bg-gray-700 text-gray-300 placeholder-gray-500"
+                    placeholder="Enter city name">
+                <div class="flex space-x-4 mt-2">
+                    <button id="getWeather"
+                        class="bg-indigo-600 text-white py-2 px-5 rounded hover:bg-indigo-500 transition">Get
+                        Weather</button>
+                </div>
+                <div class="relative mt-2">
+                    <button
+                        class="flex items-center space-x-2 bg-gray-700 p-2 rounded-full hover:bg-gray-600 transition">
+                        <img src="./p1.jpg" alt="Profile" class="w-8 h-8 rounded-full">
+                    </button>
+                </div>
+            </header>
+
+            <!-- Weather Widget -->
+            <div class="weather-widget bg-gray-800 p-6 mt-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4 text-white">Weather Data Based on City</h3>
+                <div id="weatherDetails" class="z-100 text-indigo-300">
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts flex flex-wrap gap-6 mt-8">
+                <div class="chart flex-1 min-w-[250px] bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h4 class="text-center text-indigo-400 mb-4 font-semibold">Vertical Bar Chart</h4>
+                    <canvas id="tempBarChart"></canvas>
+                </div>
+                <div class="chart flex-1 min-w-[250px] bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h4 class="text-center text-indigo-400 mb-4 font-semibold">Doughnut Chart</h4>
+                    <canvas id="weatherDoughnutChart"></canvas>
+                </div>
+                <div class="chart flex-1 min-w-[250px] bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h4 class="text-center text-indigo-400 mb-4 font-semibold">Line Chart</h4>
+                    <canvas id="tempLineChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+
+</html>
